@@ -17,14 +17,20 @@ export class ListPage {
     'american-football', 'boat', 'bluetooth', 'build'];
 
     this.items = [];
-    for(let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
+    // for(let i = 1; i < 11; i++) {
+    //   this.items.push({
+    //     title: 'Item ' + i,
+    //     note: 'This is item #' + i,
+    //     icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+    //   });
+    // }
+
+    this.items.push({title:'President', note:'',icon:'boat'});
+    this.items.push({title:'Vice President', note:'',icon:'boat'});
+    this.items.push({title:'Secretary', note:'',icon:'boat'});
+    this.items.push({title:'Tresurer', note:'',icon:'boat'});
+    this.items.push({title:'Commitee Member ', note:'',icon:'boat'});
     }
-  }
 
   itemTapped(event, item) {
     this.navCtrl.push(ItemDetailsPage, {

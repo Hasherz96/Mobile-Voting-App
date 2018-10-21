@@ -1,3 +1,5 @@
 page-hello-ionic {
-
+    ion-navbar[hidebackbutton] button[menutoggle] {
+        display: block !important;
+      }
 }
