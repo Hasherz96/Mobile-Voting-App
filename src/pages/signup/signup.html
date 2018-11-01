@@ -16,28 +16,29 @@
 
 
 <ion-content padding>
+    <div text-right>
+        <button ion-button color="secondary" (click)="toLogin()" >login</button>
+    </div>
     <ion-item>
       <ion-label color="dark" floating>Email</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="dark" floating>Password</ion-label>
-      <ion-input ></ion-input>
+      <ion-input [(ngModel)]="password" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="dark" floating>Confirm Password</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="confirm_password" type="text"></ion-input>
     </ion-item>
     <br>
     <br>
+    
     <div text-center>
-      <button ion-button color="primary" (click)="toHome()" >Sign Up</button>
+      <button ion-button color="primary" (click)="toHome()" block>Sign Up</button>
     </div>
     <div text-center>
-        <button ion-button color="danger" (click)="toBack()" >Cancel</button>
+        <button ion-button color="danger" (click)="toBack()" block>Cancel</button>
       </div>
-    <div text-center>
-        <button ion-button color="light" (click)="toLogin()" >Login</button>
-      </div>
-
+    
 </ion-content>
