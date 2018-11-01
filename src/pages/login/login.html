@@ -14,5 +14,16 @@
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-label color="dark" floating>Email</ion-label>
+        <ion-input [(ngModel)]="email" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark" floating>Password</ion-label>
+        <ion-input [(ngModel)]="password" type="text"></ion-input>
+      </ion-item><br><br>
 
+      <div text-center>
+          <button ion-button color="primary" (click)="toLog()" block>Login</button>
+        </div>
 </ion-content>
