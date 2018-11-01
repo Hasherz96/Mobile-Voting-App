@@ -5,18 +5,20 @@ const bodyParser = require('body-parser');
 
 var mongoose    = require('mongoose'); //mongoose for mongo db
 var config 	= require('./config');
-var connection 		= mongoose.connect("mongodb://localhost:27017/MobileApp", { useNewUrlParser: true })
+var connection 		= mongoose.connect("mongodb://localhost:27017/MobileApp", { useCreateIndex: true, useNewUrlParser: true })
 /* Define Mongoose connection to project's MongoDB database */
 
 
 const candidatesRoutes = require('./api/routes/candidates');
 const rulesRoutes = require('./api/routes/rules');
 const voteRoutes = require('./api/routes/vote');
+const voterRoutes = require('./api/routes/voter');
 
 /*Middleware*/
 app.use(morgan('dev')); 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 /*Handling CORS errors*/
 app.use((req, res, next)=>{
@@ -40,6 +42,8 @@ app.use((req, res, next)=>{
 app.use('/candidates', candidatesRoutes); /* every url with candidates */
 app.use('/rules', rulesRoutes); /* every url with rules */
 app.use('/vote', voteRoutes); /* every url with rules */
+app.use('/voter',voterRoutes);
+
 
 /*if the above two ones are past, meaning there is an error*/
 /*Error Handling in routes*/
