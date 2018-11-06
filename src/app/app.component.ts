@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { LoginPage } from '../pages/login/login';
 import { ListPage } from '../pages/list/list';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
@@ -35,8 +36,9 @@ export class MyApp {
       { title: 'Home', component: HelloIonicPage },
       { title: 'Candidates', component: ListPage },
       { title: 'Rules and Regulations', component: RulesPage },
-      { title: 'Settings', component: SettingsPage }
-     
+      { title: 'Settings', component: SettingsPage },
+      { title: 'Signup', component: SignupPage },
+      { title: 'Login', component: LoginPage }
     ];
   }
 

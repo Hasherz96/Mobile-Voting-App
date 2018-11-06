@@ -4,28 +4,18 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import { LoginPage } from '../login/login';
 
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-
   email: string;
   password: string;
   confirm_password: string
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              private alertctrl:AlertController,
-              private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient) {
+  
   }
 
   ionViewDidLoad() {
