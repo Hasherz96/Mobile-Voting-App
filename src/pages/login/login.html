@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Login</ion-title>
+    <ion-title text-center>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,6 +24,14 @@
       </ion-item><br><br>
 
       <div text-center>
-          <button ion-button color="primary" (click)="toLog()" block>Login</button>
+          <button ion-button color="primary" (click)="toLog()">Login</button>
+          <button ion-button color="danger" (click)="toBack()">Cancel</button>
+      </div>
+      <br>
+      <br>
+
+      <div text-center>
+          Don't have an account ?
+          <button ion-button color="light" (click)="toSignup()" >login</button>
         </div>
 </ion-content>
