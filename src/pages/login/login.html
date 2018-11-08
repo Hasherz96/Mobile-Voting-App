@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar class ="card">
     <ion-title text-center>Login</ion-title>
   </ion-navbar>
 
@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+  <ion-card>
     <ion-item>
         <ion-label color="dark" floating>Email</ion-label>
         <ion-input [(ngModel)]="email" type="text"></ion-input>
@@ -27,11 +28,11 @@
           <button ion-button color="primary" (click)="toLog()">Login</button>
           <button ion-button color="danger" (click)="toBack()">Cancel</button>
       </div>
-      <br>
-      <br>
-
+   
+    
+    </ion-card>
       <div text-center>
           Don't have an account ?
-          <button ion-button color="light" (click)="toSignup()" >login</button>
+          <button ion-button color="light" (click)="toSignup()" >Sign up</button>
         </div>
 </ion-content>
