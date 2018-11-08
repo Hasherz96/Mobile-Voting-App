@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
+import { VotePage } from '../pages/vote/vote';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +40,9 @@ export class MyApp {
       { title: 'Rules and Regulations', component: RulesPage },
       { title: 'Settings', component: SettingsPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Login', component: LoginPage }
+      { title: 'Login', component: LoginPage },
+      { title: 'Vote', component: VotePage },
+
     ];
   }
 

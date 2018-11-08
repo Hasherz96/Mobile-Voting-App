@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { VotePage } from '../pages/vote/vote';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { TaskProvider } from '../providers/task/task';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    VotePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { TaskProvider } from '../providers/task/task';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    VotePage
   ],
   providers: [
     StatusBar,
