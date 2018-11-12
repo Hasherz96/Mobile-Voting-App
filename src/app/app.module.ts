@@ -14,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { TaskProvider } from '../providers/task/task';
+import { RulesPage } from '../pages/rules/rules';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TaskProvider } from '../providers/task/task';
     ItemDetailsPage,
     ListPage,
     LoginPage,
-    VotePage
+    VotePage,
+    RulesPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { TaskProvider } from '../providers/task/task';
     ItemDetailsPage,
     ListPage,
     LoginPage,
-    VotePage
+    VotePage,
+    RulesPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

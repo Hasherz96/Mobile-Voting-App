@@ -1,3 +1,16 @@
 page-rules {
+    ion-navbar[hidebackbutton] button[menutoggle] {
+        display: block !important;
+      }
+
+      .content-md{
+        background-color: #3F51B5 !important;
+    
+}
 
 }
+
+.background{
+    box-shadow: 0px 3px 1px -2px;
+  }
+  

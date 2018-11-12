@@ -3,12 +3,12 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { LoginPage } from '../pages/login/login';
+//import { LoginPage } from '../pages/login/login'; //removed cause these showed up in the nav bar
 import { ListPage } from '../pages/list/list';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
-import { VotePage } from '../pages/vote/vote';
+//import { VotePage } from '../pages/vote/vote';  removed cause these showed up in the nav bar
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -38,10 +38,7 @@ export class MyApp {
       { title: 'Home', component: HelloIonicPage },
       { title: 'Candidates', component: ListPage },
       { title: 'Rules and Regulations', component: RulesPage },
-      { title: 'Settings', component: SettingsPage },
-      { title: 'Signup', component: SignupPage },
-      { title: 'Login', component: LoginPage },
-      { title: 'Vote', component: VotePage },
+      { title: 'Settings', component: SettingsPage }
 
     ];
   }
