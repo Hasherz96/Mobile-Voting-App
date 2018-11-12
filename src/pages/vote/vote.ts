@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the VotePage page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VotePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VotePage');
+  }
+
+  toVote(){
+    this.navCtrl.push(LoginPage);
   }
 
 }
