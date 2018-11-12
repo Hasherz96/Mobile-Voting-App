@@ -2,4 +2,12 @@ page-hello-ionic {
     ion-navbar[hidebackbutton] button[menutoggle] {
         display: block !important;
       }
+
+      .content-md{
+        background-color: #3F51B5 !important;
+    
+      .title{//color of the title of the hoempage
+        color: #e6eae7;
+      }
+}
 }

@@ -17,13 +17,7 @@ export class ListPage {
     'american-football', 'boat', 'bluetooth', 'build'];
 
     this.items = [];
-    // for(let i = 1; i < 11; i++) {
-    //   this.items.push({
-    //     title: 'Item ' + i,
-    //     note: 'This is item #' + i,
-    //     icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-    //   });
-    // }
+   
 
     this.items.push({title:'President', note:'',icon:'boat'});
     this.items.push({title:'Vice President', note:'',icon:'boat'});

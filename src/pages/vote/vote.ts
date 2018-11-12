@@ -27,4 +27,6 @@ export class VotePage {
     this.navCtrl.push(LoginPage);
   }
 
+  
+
 }
