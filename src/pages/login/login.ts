@@ -37,6 +37,22 @@ export class LoginPage {
     this.http.post('http://localhost:8080/voter/login', data).subscribe(response => {
             this.navCtrl.push(HelloIonicPage);
             console.log('POST Response:', response);
+        },error=>{
+          let alert = this.alertctrl.create({
+            title:'Invalid login',
+            message:'Try again!',
+      
+            buttons: [
+              {
+                text: 'Ok',
+                role:'Stay',
+                handler: () => {
+                  console.log('Stay clicked');
+                }
+              }
+            ]
+          });
+          alert.present();
         });
   }
 
