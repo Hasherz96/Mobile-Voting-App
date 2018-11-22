@@ -20,29 +20,9 @@
 
 <ion-content padding>
 
-    <ion-card>
-        <ion-item>
-           Rule 1
+    <ion-card >
+        <ion-item text-wrap *ngFor ="let a of rules">
+                {{a.rule}} 
         </ion-item>
     </ion-card>    
-
-    <ion-card>
-        <ion-item>
-           Rule 2
-        </ion-item>
-    </ion-card>    
-
-    <ion-card>
-        <ion-item>
-           Rule 3
-        </ion-item>
-    </ion-card>  
-    
-    <ion-card>
-        <ion-item>
-           Rule 4
-        </ion-item>
-    </ion-card>    
-
-
 </ion-content>
