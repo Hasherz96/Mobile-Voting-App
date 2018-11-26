@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
-import { PresidentPage } from '../pages/president/president';
 //import { VotePage } from '../pages/vote/vote';  removed cause these showed up in the nav bar
 
 
