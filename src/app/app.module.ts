@@ -16,6 +16,7 @@ import { LoginPage } from '../pages/login/login';
 import { TaskProvider } from '../providers/task/task';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
+import { PresidentPage } from '../pages/president/president';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SettingsPage } from '../pages/settings/settings';
     LoginPage,
     VotePage,
     RulesPage,
-    SettingsPage
+    SettingsPage,
+    PresidentPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { SettingsPage } from '../pages/settings/settings';
     LoginPage,
     VotePage,
     RulesPage,
-    SettingsPage
+    SettingsPage,
+    PresidentPage
   ],
   providers: [
     StatusBar,

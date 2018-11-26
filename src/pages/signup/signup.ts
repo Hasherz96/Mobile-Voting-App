@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import { LoginPage } from '../login/login';
+import { PresidentPage } from '../president/president';
 
 @IonicPage()
 @Component({
@@ -39,6 +40,10 @@ export class SignupPage {
     this.navCtrl.push(LoginPage);
   }
 
+  gotoP(){
+    this.navCtrl.push(PresidentPage);
+  }
+
   toBack(){ //to exit app
     //creating an alert before exiting app
     let alert = this.alertctrl.create({
@@ -64,5 +69,7 @@ export class SignupPage {
     });
     alert.present();
   }
+
+  
 
 }
