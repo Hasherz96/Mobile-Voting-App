@@ -19,19 +19,24 @@
         <ion-card-header>
           President
         </ion-card-header>
+        
         <ion-card-content>
-            <ion-item>
-                <ion-label>Candidate1</ion-label>
-                <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-                <ion-label>Candidate3</ion-label>
-                <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-                <ion-label>Candidate3</ion-label>
-                <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate3"></ion-checkbox>
-            </ion-item>
+
+            <ion-list radio-group [(ngModel)]="president">
+                <ion-item>
+                    <ion-label>Candidate1</ion-label>
+                    <ion-radio value="friends" ></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Candidate2</ion-label>
+                    <ion-radio value="family"></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Candidate3</ion-label>
+                    <ion-radio value="enemies"></ion-radio>
+                </ion-item>
+            </ion-list>
+                 
         </ion-card-content>
       </ion-card>
 
@@ -39,15 +44,22 @@
       <ion-card-header>
           Vice President
       </ion-card-header>
-      <ion-card-content>
-          <ion-item>
-              <ion-label>Candidate1</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-              <ion-label>Candidate2</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-          </ion-item>   
+        <ion-card-content>
+            <ion-list radio-group  [(ngModel)]="vicePresident">
+                    <ion-item>
+                        <ion-label>Candidate1</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate2</ion-label>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate3</ion-label>
+                        <ion-radio value="enemies" ></ion-radio>
+                    </ion-item>
+                </ion-list>
+             
       </ion-card-content>
     </ion-card>
         
@@ -56,15 +68,23 @@
         Secretary
       </ion-card-header>
       <ion-card-content>
-          <ion-item>
-              <ion-label>Candidate1</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-              <ion-label>Candidate2</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-          </ion-item>    
-      </ion-card-content>
+          
+            <ion-list radio-group [(ngModel)]="secretary">
+                    <ion-item>
+                        <ion-label>Candidate1</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate2</ion-label>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate3</ion-label>
+                        <ion-radio value="enemies"></ion-radio>
+                    </ion-item>
+                </ion-list>
+    
+    </ion-card-content>
     </ion-card>
 
     <ion-card>
@@ -72,14 +92,22 @@
         Editor
       </ion-card-header>
       <ion-card-content>
-          <ion-item>
-              <ion-label>Candidate1</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-              <ion-label>Candidate2</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-          </ion-item>      
+
+            <ion-list radio-group [(ngModel)]="editor">
+                    <ion-item>
+                        <ion-label>Candidate1</ion-label>
+                        <ion-radio value="friends" ></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate2</ion-label>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate3</ion-label>
+                        <ion-radio value="enemies" ></ion-radio>
+                    </ion-item>
+                </ion-list>
+                      
       </ion-card-content>
     </ion-card>
 
@@ -88,14 +116,22 @@
         Junior Tresurer
       </ion-card-header>
       <ion-card-content>
-          <ion-item>
-              <ion-label>Candidate1</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-          </ion-item>
-          <ion-item>
-              <ion-label>Candidate2</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-          </ion-item>         
+          
+            <ion-list radio-group [(ngModel)]="juniorTresurer">
+                    <ion-item>
+                        <ion-label>Candidate1</ion-label>
+                        <ion-radio value="friends" ></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate2</ion-label>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Candidate3</ion-label>
+                        <ion-radio value="enemies" ></ion-radio>
+                    </ion-item>
+                </ion-list>
+                
       </ion-card-content>
     </ion-card>
 
@@ -104,52 +140,75 @@
           Committee Member
         </ion-card-header>
         <ion-card-content>
-            <ion-item>
-                <ion-label>Candidate1</ion-label>
-                <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-                <ion-label>Candidate2</ion-label>
-                <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-            </ion-item>         
+            
+                <ion-list radio-group [(ngModel)]="cm1">
+                        <ion-item>
+                            <ion-label>Candidate1</ion-label>
+                            <ion-radio value="friends" ></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate2</ion-label>
+                            <ion-radio value="family"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate3</ion-label>
+                            <ion-radio value="enemies"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                           
         </ion-card-content>
     </ion-card>
 
     <ion-card>
         <ion-card-header>
-            Committee Memeber 2
+            Committee Member 2
         </ion-card-header>
         <ion-card-content>
-            <ion-item>
-                <ion-label>Candidate1</ion-label>
-               
-                <ion-checkbox color="blue" checked="false"  [(ngModel)]="Candidate1"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-                <ion-label>Candidate2</ion-label>
-                <ion-checkbox color="blue" checked="false"  [(ngModel)]="Candidate2"></ion-checkbox>
-            </ion-item>         
+           
+                <ion-list radio-group [(ngModel)]="cm2">
+                        <ion-item>
+                            <ion-label>Candidate1</ion-label>
+                            <ion-radio value="friends"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate2</ion-label>
+                            <ion-radio value="family"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate3</ion-label>
+                            <ion-radio value="enemies" ></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                           
         </ion-card-content>
     </ion-card>
 
     <ion-card>
         <ion-card-header>
-              Commitee Memeber
+              Commitee Member
         </ion-card-header>
         <ion-card-content>
-            <ion-item>
-              <ion-label>Candidate1</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate1"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Candidate2</ion-label>
-              <ion-checkbox color="blue" checked="false" [(ngModel)]="Candidate2"></ion-checkbox>
-            </ion-item>         
+            
+                <ion-list radio-group [(ngModel)]="cm3">
+                        <ion-item>
+                            <ion-label>Candidate1</ion-label>
+                            <ion-radio value="friends"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate2</ion-label>
+                            <ion-radio value="family"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Candidate3</ion-label>
+                            <ion-radio value="enemies" ></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                           
         </ion-card-content>
     </ion-card>
 
     <div text-center>
-        <button ion-button color="dirty" (click)="toVote()" >Vote</button>
+        <button ion-button color="dirty" (click)="toValidate()" >Vote</button>
     </div>
 
 </ion-content>

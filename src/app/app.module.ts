@@ -16,6 +16,7 @@ import { LoginPage } from '../pages/login/login';
 import { TaskProvider } from '../providers/task/task';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
+import { GlobalVarProvider } from '../providers/global-var/global-var';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SettingsPage } from '../pages/settings/settings';
     LoginPage,
     VotePage,
     RulesPage,
-    SettingsPage
+    SettingsPage,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,13 +46,16 @@ import { SettingsPage } from '../pages/settings/settings';
     LoginPage,
     VotePage,
     RulesPage,
-    SettingsPage
+    SettingsPage,
+
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TaskProvider
+    TaskProvider,
+    GlobalVarProvider
   ]
 })
 export class AppModule {}
