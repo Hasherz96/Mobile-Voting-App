@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 var mongoose    = require('mongoose'); //mongoose for mongo db
 var config 	= require('./config');
+//mongoosee.connect('mongodb://laiya:123@ucsc-union-election-shard-00-00-7i44v.mongodb.net:27017,ucsc-union-election-shard-00-01-7i44v.mongodb.net:27017,ucsc-union-election-shard-00-02-7i44v.mongodb.net:27017/test?ssl=true&replicaSet=UCSC-UNION-ELECTION-shard-0&authSource=admin&retryWrites=true')
 var connection 		= mongoose.connect("mongodb://localhost:27017/MobileApp", { useCreateIndex: true, useNewUrlParser: true })
 /* Define Mongoose connection to project's MongoDB database */
 
