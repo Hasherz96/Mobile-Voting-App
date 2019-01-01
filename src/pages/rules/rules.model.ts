@@ -1,4 +1,5 @@
 export class Rules{
-    rule: String;
+    rule: String
+    election:String
     
 }

@@ -54,7 +54,8 @@ export class LoginPage {
           });
           alert.present();
         });
-  }
+  
+      }
 
   toSignup(){  //the buttton that will send the user back to sign up page
     this.navCtrl.push(SignupPage);
