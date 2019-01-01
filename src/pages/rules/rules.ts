@@ -22,12 +22,10 @@ export class RulesPage {
 
   rules:Rules[]=[]; //getting the model in to rules
   public jsonObject: any;
+  
   checklistObserver: any;
 
-
   constructor(public navCtrl: NavController,public navParams: NavParams,private http:HttpClient) {
-  
-  
   }
 
   ionViewDidLoad() {

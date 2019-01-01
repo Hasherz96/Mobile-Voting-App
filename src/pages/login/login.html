@@ -12,8 +12,7 @@
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding><br><br><br>
   <ion-card>
     <ion-item>
         <ion-label color="dark" floating>Email</ion-label>
@@ -23,16 +22,18 @@
         <ion-label color="dark" floating>Password</ion-label>
         <ion-input [(ngModel)]="password" type="password"></ion-input>
       </ion-item><br><br>
-
+      <div text-center>
+        Forgot password  <button style="font-weight: bold; top: -10px; font-size: 12px; background-color: #fdf9f9; color: #585454;" small ion-button (click)="toChange()">Change Password</button>
+      </div><br>
       <div text-center>
           <button ion-button color="dark" (click)="toLog()">Login</button>
           <button ion-button color="light" (click)="toBack()">Cancel</button>
       </div>
    
     
-    </ion-card>
+    </ion-card><br>
       <div text-center>
-          <p stlye="color: white">Don't have an account ?</p>
-          <button ion-button color="light" (click)="toSignup()" >Sign up</button>
+        <span style="color:white">Don't have an account ?</span>
+        <button style="font-weight: bold; top: -10px; font-size: 12px; background-color: #fdf9f9; color: #131111;" ion-button color="light" (click)="toSignup()" >Sign up</button>
         </div>
 </ion-content>

@@ -1,9 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
+    <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{selectedItem.title}} Candidates</ion-title>
+    <ion-title>{{selectedItem.title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,14 +15,16 @@
   <h4 text-center *ngIf="selectedItem">
     You navigated here from <b>{{selectedItem.title}}</b>
   </h4> -->
-
-
   <ion-card>
       <ion-card-header>
         Candidates registered for the Election
       </ion-card-header>
-      <ion-card-content>
-             
+      <ion-card-content >
+             <ion-item text-wrap *ngFor="let a of candidates">
+                {{a.name}}
+                {{a.title}}
+                {{a.degree}}
+             </ion-item>
       </ion-card-content>
     </ion-card>
 </ion-content>

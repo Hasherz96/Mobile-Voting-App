@@ -24,9 +24,9 @@ export class ListPage {
     this.items.push({title:'Secretary', note:'',icon:'boat'});
     this.items.push({title:'Tresurer', note:'',icon:'boat'});
     this.items.push({title:'Commitee Member ', note:'',icon:'boat'});
-    }
+  }
 
-  itemTapped(event, item) {
+  itemTapped(event, item ){
     this.navCtrl.push(ItemDetailsPage, {
       item: item
     });
