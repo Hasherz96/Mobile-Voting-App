@@ -38,7 +38,8 @@ export class LoginPage {
             this.navCtrl.push(HelloIonicPage);
             console.log('POST Response:', response);
         });
-  }
+  
+      }
 
   toSignup(){  //the buttton that will send the user back to sign up page
     this.navCtrl.push(SignupPage);

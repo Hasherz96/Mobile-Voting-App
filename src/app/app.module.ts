@@ -29,6 +29,7 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
+   
     
   ],
   imports: [
@@ -47,8 +48,7 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
-
-    
+   
   ],
   providers: [
     StatusBar,

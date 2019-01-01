@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Rules } from './rules.model'; //importing model
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 
 /**
@@ -25,7 +25,9 @@ export class RulesPage {
   checklistObserver: any;
 
 
-  constructor(public navCtrl: NavController,public navParams: NavParams,private http:HttpClient) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private http:HttpClient) {
   
   
   }

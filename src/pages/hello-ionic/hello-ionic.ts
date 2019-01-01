@@ -19,6 +19,7 @@ export class HelloIonicPage {
 
   toVote(){
       if(this.global.studentVoted==true){  //if already voted cannot give access
+        
         this.createAlert();
       
       }
