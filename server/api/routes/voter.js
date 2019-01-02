@@ -143,7 +143,13 @@ router.post('/signup',(req,res,next)=>{
                     // res.status(422).send('Enter Correct Email Address');
                 }
             }else if(!result) {//not a allowed user
-                res.status(404).send('Not allowed user');
+                if(result.email!=user.email){
+                    return res.status(500).json({
+                        error: err
+                    });
+                }else{
+                    res.status(404).send('Not allowed user');
+                }
             }else{ //Server Issue
                 throw er;
             }

@@ -4,7 +4,7 @@ import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {SignupPage} from '../signup/signup';
 import {PasswordChangePage} from '../password-change/password-change';
-
+import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,21 +19,35 @@ import {PasswordChangePage} from '../password-change/password-change';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  email: string;
-  password: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient,private alertctrl:AlertController) {
+  formgroup: FormGroup;
+  email: AbstractControl;
+  password: AbstractControl;  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient,private alertctrl:AlertController,public formbuilder:FormBuilder) {
+    this.formgroup = formbuilder.group({
+      email:['',Validators.required],
+      password: ['',Validators.required]
+    });
+    this.email = this.formgroup.contains['email'];
+    this.password = this.formgroup.contains['password'];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  toLog(){
+  toLog(formGroup: FormGroup){
+
     let data = {
       email: this.email,
       password: this.password,
     };
+
+    // form = new FormGroup({
+    //   email: new FormControl(this.email, Validators.required),
+    //   password: new FormControl(this.password, Validators.required)
+    // });
 
     this.http.post('http://localhost:8080/voter/login', data).subscribe(response => {
             let alert = this.alertctrl.create({

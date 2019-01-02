@@ -14,26 +14,43 @@
 
 <ion-content padding><br><br><br>
   <ion-card>
+    <form [formGroup]="formgroup"><br><br><br>
+     
     <ion-item>
         <ion-label color="dark" floating>Email</ion-label>
-        <ion-input [(ngModel)]="email" type="text"></ion-input>
+        <ion-input [(ngModel)]="email" formControlName="email" type="text" ></ion-input>
       </ion-item>
+      <div class="help-block form-error text-danger small" 
+      *ngIf="formgroup.controls['email'].errors?.required &&
+      formgroup.controls['email'].touched">
+        <p style="margin-left: 30px; font-size: 12px; text-decoration: underline; color: #e60d0d;">*Email Is Required</p>
+    </div>
+
+
       <ion-item>
         <ion-label color="dark" floating>Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-      </ion-item><br><br>
+        <ion-input [(ngModel)]="password" formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <div class="help-block form-error text-danger small" 
+      *ngIf="formgroup.controls['password'].errors?.required &&
+      formgroup.controls['password'].touched">
+        <p style="margin-left: 30px; font-size: 12px; text-decoration: underline; color: #e60d0d;">*Password Is Required</p>
+    </div>
+
+      <br><br>
       <div text-center>
-        Forgot password  <button style="font-weight: bold; top: -10px; font-size: 12px; background-color: #fdf9f9; color: #585454;" small ion-button (click)="toChange()">Change Password</button>
+        Forgot password  <button style="font-weight: bold; top: -10px; text-decoration: underline; font-size: 12px; background-color: #fdf9f9; color: #585454;" small ion-button (click)="toChange()">Change Password</button>
       </div><br>
       <div text-center>
-          <button ion-button color="dark" (click)="toLog()">Login</button>
-          <button ion-button color="light" (click)="toBack()">Cancel</button>
+          <button clear ion-button style="left: 10px; font-size: 16px; background-color: #080808; color: #fdfbfb;" (click)="toLog()">Login</button>
+          <button clear ion-button style="left: 10px; font-size: 16px; background-color: #bbb6b6; color: #0f0f0f;" (click)="toBack()">Cancel</button>
       </div>
-   
     
+    </form>
     </ion-card><br>
+
       <div text-center>
         <span style="color:white">Don't have an account ?</span>
-        <button style="font-weight: bold; top: -10px; font-size: 12px; background-color: #fdf9f9; color: #131111;" ion-button color="light" (click)="toSignup()" >Sign up</button>
+        <button style="font-weight: bold; top: -10px; font-size: 12px; text-decoration: underline; background-color: #fdf9f9; color: #131111;" ion-button color="light" (click)="toSignup()" >Sign up</button>
         </div>
 </ion-content>
