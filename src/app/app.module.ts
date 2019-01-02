@@ -34,6 +34,7 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
     SettingsPage,
     PasswordChangePage,
     OtpgeneratePage
+
   ],
   imports: [
     BrowserModule,
@@ -51,8 +52,10 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
     VotePage,
     RulesPage,
     SettingsPage,
+
     PasswordChangePage,
     OtpgeneratePage
+
   ],
   providers: [
     StatusBar,

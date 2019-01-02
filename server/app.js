@@ -6,12 +6,14 @@ const morgan = require('morgan');
 
 var mongoose    = require('mongoose'); //mongoose for mongo db
 var config 	= require('./config');
+
 mongoose.connect('mongodb+srv://laiya:123@ucsc-union-election-7i44v.mongodb.net/MEAN?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',{ useCreateIndex: true, useNewUrlParser: true })
 const conn = mongoose.connection;
 conn.on('connected',()=>{
     console.log('connected to mongodb');
 })
 // var connection 	= mongoose.connect("mongodb://localhost:27017/MobileApp", { useCreateIndex: true, useNewUrlParser: true })
+
 /* Define Mongoose connection to project's MongoDB database */
 
 /*Middleware*/
