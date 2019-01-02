@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { HttpClient } from '@angular/common/http';
-import { Candidates } from './item-details.model'; //importing model
+import { NavController, NavParams } from 'ionic-angular';
+import { Candidate } from '../vote/vote.model';
+
+
 
 
 @IonicPage()
@@ -12,26 +15,46 @@ import { Candidates } from './item-details.model'; //importing model
 export class ItemDetailsPage {
   selectedItem: any;
 
-  candidates: Candidates[]=[];
-  // public jsonObject: any;
-  // checklistObserver: any;  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
+  /*Declaring object to display in the Ui*/
+  data:Candidate[]=[];
+ 
+
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     private http:HttpClient) {
+
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ItemDetailsPage');
-  }
-  ngOnInit(){ //load candidates details
-    this.getCandidates().subscribe(
-      candidates=>{
-        this.candidates=candidates as Candidates[];
-        console.log(this.candidates);
-      })
+
+    console.log("The selected item : "+ this.selectedItem.title);
   }
 
-  getCandidates(){ //getting candidates details
-    return this.http.get('http://localhost:8080/candidates');
-  }
+
+  ngOnInit(){ 
+    
+     this.getdata().subscribe(
+         data=>{
+       this.data= data as Candidate[];
+       console.log(this.data[0]); 
+       console.log(this.data[0].candidatename); 
+ 
+     })
+ 
+      
+   } 
+ 
+   getdata(){ //these two defined differently as the db does not contain spaces
+     if (this.selectedItem.title=="Vice President"){ 
+      return this.http.get('http://localhost:8080/candidates/VicePresident');
+     }
+     else if(this.selectedItem.title=="Commitee Members"){
+      return this.http.get('http://localhost:8080/candidates/Committee');
+     }
+     else {return this.http.get('http://localhost:8080/candidates/'+this.selectedItem.title);}
+   }
+ 
+  
+ 
+
 }
