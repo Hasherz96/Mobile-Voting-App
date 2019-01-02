@@ -17,6 +17,9 @@ import { TaskProvider } from '../providers/task/task';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { GlobalVarProvider } from '../providers/global-var/global-var';
+import { PasswordChangePage } from '../pages/password-change/password-change';
+import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +32,9 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
-   
-    
+    PasswordChangePage,
+    OtpgeneratePage
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,10 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
-   
+
+    PasswordChangePage,
+    OtpgeneratePage
+
   ],
   providers: [
     StatusBar,

@@ -13,4 +13,4 @@ const voteSchema = mongoose.Schema({ //the data we are dealing with in a vote
     cmember4:String
 });
 
-module.exports=mongoose.model('Vote', voteSchema); // the name we are going to use internally for the schema on the right
+module.exports=mongoose.model('vote', voteSchema); // the name we are going to use internally for the schema on the right

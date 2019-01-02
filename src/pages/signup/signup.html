@@ -15,21 +15,31 @@
 </ion-header>
 
 
-<ion-content padding  class="masters">
-  <ion-card>
+<ion-content padding  class="masters"><br><br><br>
+  <!-- <ion-card> -->
+    <ion-item>
+      <ion-label color="dark" floating>Username</ion-label>
+      <ion-input [(ngModel)]="userName" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark" floating>Registration Number</ion-label>
+      <ion-input [(ngModel)]="registrationnumber" type="text"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label color="dark" floating>Email</ion-label>
       <ion-input [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
-
+    <ion-item>
+      <ion-label color="dark" floating>Phone Number</ion-label>
+      <ion-input [(ngModel)]="phonenumber" type="text"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label color="dark" floating>Password</ion-label>
       <ion-input [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
-
     <ion-item>
       <ion-label color="dark" floating >Confirm Password</ion-label>
-      <ion-input [(ngModel)]="confirm_password" type="password"></ion-input>
+      <ion-input [(ngModel)]="cpassword" type="password"></ion-input>
     </ion-item>
 
     <br>
@@ -39,12 +49,13 @@
       <button ion-button color="dark" (click)="toHome()">Sign Up</button>
       <button ion-button color="light" (click)="toBack()">Cancel</button>
     </div>
+   <!-- </ion-card>  -->
     <br>
     <br>
-    </ion-card>
-    <div text-center>
-     <p style="color:white"> Already have an account ?</p>
-      <button ion-button color="light" (click)="toLogin()" >login</button>
+    
+    <div text-center><br>
+     <span style="color:white"> Already have an account ?</span>
+      <button ion-button style="font-weight: bold; top: -10px; font-size: 12px; background-color: #fdf9f9; color: #131111;" color="light" (click)="toLogin()" >login</button>
     </div>
   
 </ion-content>

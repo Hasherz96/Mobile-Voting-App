@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { Candidate } from '../vote/vote.model';
 
 
 
+
+@IonicPage()
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
   selectedItem: any;
+
 
   /*Declaring object to display in the Ui*/
   data:Candidate[]=[];
@@ -19,11 +23,13 @@ export class ItemDetailsPage {
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      private http:HttpClient) {
+
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
     console.log("The selected item : "+ this.selectedItem.title);
   }
+
 
   ngOnInit(){ 
     
@@ -50,5 +56,5 @@ export class ItemDetailsPage {
  
   
  
- 
+
 }
