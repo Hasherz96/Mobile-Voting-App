@@ -3,7 +3,11 @@ import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import { LoginPage } from '../login/login';
+
+import { CountdownPage } from '../countdown/countdown';
+
 import { Platform } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -125,6 +129,10 @@ export class SignupPage {
 
   toLogin(){
     this.navCtrl.push(LoginPage);
+  }
+
+  toCountdown(){
+    this.navCtrl.push(CountdownPage);
   }
 
   toBack(){ //to exit app

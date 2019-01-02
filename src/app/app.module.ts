@@ -21,6 +21,9 @@ import { PasswordChangePage } from '../pages/password-change/password-change';
 import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
 
 
+import { CountdownModule } from 'ngx-countdown';
+import { CountdownPage } from '../pages/countdown/countdown';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,6 +35,10 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
     VotePage,
     RulesPage,
     SettingsPage,
+
+    CountdownPage
+    
+
     PasswordChangePage,
     OtpgeneratePage
 
@@ -40,6 +47,7 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    CountdownModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,8 +61,12 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
     RulesPage,
     SettingsPage,
 
+    CountdownPage
+
+
     PasswordChangePage,
     OtpgeneratePage
+
 
   ],
   providers: [
