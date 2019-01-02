@@ -17,6 +17,9 @@ import { TaskProvider } from '../providers/task/task';
 import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { GlobalVarProvider } from '../providers/global-var/global-var';
+import { PasswordChangePage } from '../pages/password-change/password-change';
+import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
+
 
 import { CountdownModule } from 'ngx-countdown';
 import { CountdownPage } from '../pages/countdown/countdown';
@@ -32,8 +35,13 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
+
     CountdownPage
     
+
+    PasswordChangePage,
+    OtpgeneratePage
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,14 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
+
     CountdownPage
+
+
+    PasswordChangePage,
+    OtpgeneratePage
+
+
   ],
   providers: [
     StatusBar,

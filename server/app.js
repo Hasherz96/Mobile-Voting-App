@@ -1,19 +1,38 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
+
 
 var mongoose    = require('mongoose'); //mongoose for mongo db
 var config 	= require('./config');
-//mongoose.connect('mongodb://laiya:123@ucsc-union-election-shard-00-00-7i44v.mongodb.net:27017,ucsc-union-election-shard-00-01-7i44v.mongodb.net:27017,ucsc-union-election-shard-00-02-7i44v.mongodb.net:27017/test?ssl=true&replicaSet=UCSC-UNION-ELECTION-shard-0&authSource=admin&retryWrites=true')
-var connection 		= mongoose.connect("mongodb://localhost:27017/MobileApp", { useCreateIndex: true, useNewUrlParser: true })
+
+mongoose.connect('mongodb+srv://laiya:123@ucsc-union-election-7i44v.mongodb.net/MEAN?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',{ useCreateIndex: true, useNewUrlParser: true })
+const conn = mongoose.connection;
+conn.on('connected',()=>{
+    console.log('connected to mongodb');
+})
+// var connection 	= mongoose.connect("mongodb://localhost:27017/MobileApp", { useCreateIndex: true, useNewUrlParser: true })
+
 /* Define Mongoose connection to project's MongoDB database */
+
+/*Middleware*/
+app.use(morgan('dev')); 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+require('./api/models/voter');
+require('./api/models/candidates');
+require('./api/models/email');
+require('./api/models/vote');
+require('./api/models/rules')
 
 
 const candidatesRoutes = require('./api/routes/candidates');
 const rulesRoutes = require('./api/routes/rules');
 const voteRoutes = require('./api/routes/vote');
 const voterRoutes = require('./api/routes/voter');
+
 const electionRoutes = require('./api/routes/election');
 
 /*Middleware*/
@@ -21,6 +40,13 @@ const electionRoutes = require('./api/routes/election');
 app.use(morgan('dev')); 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+const emailRoutes = require('./api/routes/email');
+
+
+// app.use(bodyParser.urlencoded({extended: true}));
+app.use('/uploads',express.static('uploads'));
+
 
 
 /*Handling CORS errors*/
@@ -46,8 +72,10 @@ app.use('/candidates', candidatesRoutes); /* every url with candidates */
 app.use('/rules', rulesRoutes); /* every url with rules */
 app.use('/vote', voteRoutes); /* every url with vote */
 app.use('/voter',voterRoutes);
+
 app.use('/election',electionRoutes);
 
+app.use('/email',emailRoutes)
 
 
 /*if the above two ones are past, meaning there is an error*/

@@ -3,8 +3,12 @@ page-signup {
         background-color: #3F51B5 !important;
     }
 }
-
-.card-md .item-inner { border-bottom: 1px solid #dedede !important; }
+.card-md{
+    height: 5000px;
+}
+.card-md .item-inner {
+     border-bottom: 1px solid #dedede !important; 
+}
 
 .item-md {
     padding-left: 16px;
