@@ -18,6 +18,9 @@ import { RulesPage } from '../pages/rules/rules';
 import { SettingsPage } from '../pages/settings/settings';
 import { GlobalVarProvider } from '../providers/global-var/global-var';
 
+import { CountdownModule } from 'ngx-countdown';
+import { CountdownPage } from '../pages/countdown/countdown';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,13 +32,14 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
-   
+    CountdownPage
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    CountdownModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +52,7 @@ import { GlobalVarProvider } from '../providers/global-var/global-var';
     VotePage,
     RulesPage,
     SettingsPage,
-   
+    CountdownPage
   ],
   providers: [
     StatusBar,
