@@ -7,8 +7,6 @@ import { LoginPage } from '../login/login';
 import { CountdownPage } from '../countdown/countdown';
 
 import { Platform } from 'ionic-angular';
-import { VerifyPage } from '../verify/verify';
-
 import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms'
 
 
@@ -52,7 +50,7 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  toHome(){ //to link the page to home
+  toVerify(){ //to link the page to home
     let data = {
       userName: this.userName,
       registrationnumber: this.registrationnumber,
@@ -70,7 +68,6 @@ export class SignupPage {
                   text: 'Next',
                   role:'Stay',
                   handler: data => {
-
                     this.navCtrl.push(VerifyPage);
 
                     console.log('Homepage');
@@ -150,10 +147,6 @@ export class SignupPage {
   // toCountdown(){
   //   this.navCtrl.push(CountdownPage);
   // }
-
-  toVerify(){
-    this.navCtrl.push(VerifyPage) 
-  }
 
   toBack(){ //to exit app
     //creating an alert before exiting app

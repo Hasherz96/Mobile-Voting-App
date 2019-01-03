@@ -24,7 +24,6 @@ import { VerifyPage } from '../pages/verify/verify'
 
 import { CountdownModule } from 'ngx-countdown';
 import { CountdownPage } from '../pages/countdown/countdown';
-import { VerifyPage } from '../pages/verify/verify';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { VerifyPage } from '../pages/verify/verify';
     CountdownPage,
     PasswordChangePage,
     OtpgeneratePage,
-
     VerifyPage
 
   ],

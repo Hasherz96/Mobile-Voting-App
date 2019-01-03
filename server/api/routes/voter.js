@@ -124,7 +124,7 @@ router.post('/signup',(req,res,next)=>{
                                 message: "Successfully Inserted",
                                 Signup : user
                             })
-                            mailer.sendEmail('evotingucsc@gmail.com', user.email, 'Please verify your email!', html)
+                            mailer.sendEmail('evotingucsc@gmail.com', req.body.email, 'Please verify your email!', html)
 
                         }else{
                             if (err.code === 11000){ //if already signup
@@ -224,15 +224,13 @@ router.delete("/:voterId",(req,res,next)=>{
 
 router.put("/verify",(req,res,next)=>{  //
     User.findOneAndUpdate({
-
         randomstring : req.body.token
-
     },
     {$set:{isvalid:true},
     $unset :{randomstring:1}
     },
     function(err,result){
-
+        console.log("sdfghjk");
         if(err){
             res.status(500).json({
                 error : err
@@ -248,8 +246,4 @@ router.put("/verify",(req,res,next)=>{  //
     });
 
 })
-
-
-})
-
 module.exports = router;

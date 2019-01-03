@@ -7,7 +7,7 @@ const morgan = require('morgan');
 var mongoose    = require('mongoose'); //mongoose for mongo db
 var config 	= require('./config');
 
-mongoose.connect('mongodb+srv://laiya:123@ucsc-union-election-7i44v.mongodb.net/MEAN?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',{ useCreateIndex: true, useNewUrlParser: true })
+mongoose.connect('mongodb+srv://laiya:123@ucsc-union-election-7i44v.mongodb.net/MEAN?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',{ useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false })
 const conn = mongoose.connection;
 conn.on('connected',()=>{
     console.log('connected to mongodb');
