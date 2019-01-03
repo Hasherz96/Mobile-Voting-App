@@ -15,4 +15,5 @@ export class Candidate{
     regnumber:String
     post:String
     degree:String
+    checked:boolean
 }

@@ -8,6 +8,8 @@ import { Candidate } from '../vote/vote.model';
 
 
 
+
+
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
@@ -45,12 +47,21 @@ export class ItemDetailsPage {
  
    getdata(){ //these two defined differently as the db does not contain spaces
      if (this.selectedItem.title=="Vice President"){ 
-      return this.http.get('http://localhost:8080/candidates/VicePresident');
+      return this.http.get('http://localhost:8080/candidates/VP');
      }
      else if(this.selectedItem.title=="Commitee Members"){
-      return this.http.get('http://localhost:8080/candidates/Committee');
+      return this.http.get('http://localhost:8080/candidates/CM');
      }
-     else {return this.http.get('http://localhost:8080/candidates/'+this.selectedItem.title);}
+     else if(this.selectedItem.title=="Treasurer"){
+      return this.http.get('http://localhost:8080/candidates/TR');
+     }
+     else if(this.selectedItem.title=="Secretary"){
+      return this.http.get('http://localhost:8080/candidates/SE');
+     }
+     else if(this.selectedItem.title=="Editor"){
+      return this.http.get('http://localhost:8080/candidates/ED');
+     }
+     else {return this.http.get('http://localhost:8080/candidates/PR');}
    }
  
   

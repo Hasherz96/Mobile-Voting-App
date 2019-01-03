@@ -25,7 +25,7 @@ const upload = multer({
     fileFilter: fileFilter
 });
 
-router.get('/',(req, res, next)=>{
+router.get("/",(req, res, next)=>{
     Candidates.find()
     .exec()
     .then(docs=>{
@@ -73,6 +73,21 @@ router.post("/",upload.single('candidateimage'),(req, res, next)=>{
             createdCandidates : candidates
         });
     });
+
+
+// router.get('/CM/:title',(req, res, next)=>{  //retrieving the committee based on degree
+//     console.log(req.params.title);
+//     Candidates.find({degree:req.params.title} && {post:"CM"}) 
+//     .exec()
+//     .then(docs=>{
+//         console.log(docs);
+//         res.status(200).json(docs);
+//     })
+//     .catch(err =>{
+//         console.log(err);
+//         res.status(500).json()
+//     });
+// });
 
 // router.post("/",(req, res, next)=>{
 //     const candidates = new Candidates({

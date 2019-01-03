@@ -17,11 +17,11 @@ import { Candidate } from '../vote/vote.model';
 
 @IonicPage()
 @Component({
-  selector: 'page-vote',
+  selector: 'page-vote', 
   templateUrl: 'vote.html',
 })
 export class VotePage {
-
+  cmCount=0;
   Voted:Voted[];
   /*Declaring objects to display in the Ui*/
   President:Candidate[]=[];
@@ -30,6 +30,7 @@ export class VotePage {
   Treasurer:Candidate[]=[];
   Editor:Candidate[]=[];
   Committee:Candidate[]=[];
+ // Committee2:Candidate[]=[];
  
   /*Checking if all were voted*/
   favoriteSeason="na";
@@ -44,6 +45,10 @@ export class VotePage {
   cm3="na";
   pupilVoted=false;
   roles=[];
+
+  /*checking if candidate voted for committee*/
+  arr=[];
+  num=0;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -127,6 +132,11 @@ export class VotePage {
     console.log("****"+this.cm1);
     console.log(count);
 
+    var vote = this.cm2;
+    if (vote != "na") count +=1;
+    console.log("****"+this.cm1);
+    console.log(count);
+
     // var vote = this.cm2;
     // if (vote != "na") count +=1;
     // console.log("****"+this.cm2);
@@ -145,6 +155,27 @@ export class VotePage {
     else{
         this.toAlert();   
     }
+  }
+ 
+  updateCount(){
+    this.arr=[];
+    this.num=0;
+    this.Committee.forEach(item=>{
+      console.log(item)
+      if(item.checked){
+        this.num= this.num+1
+        this.arr.push(item.regnumber);
+        console.log(item.regnumber);
+      }
+      
+      else{
+      }
+
+    })
+  }
+
+  stopChecking(){
+      this.Committee
   }
 
  
@@ -218,32 +249,43 @@ export class VotePage {
 
     })
 
+  //   this.getCommitteeIS().subscribe(
+  //     Committee=>{
+  // this.Committee= Committee as Candidate[];
+  // console.log(this.President);
+
+  // })
+
      
   } 
 
   getPresident(){
-    return this.http.get('http://localhost:8080/candidates/President');
+    return this.http.get('http://localhost:8080/candidates/PR');
   }
 
   getSecretary(){
-    return this.http.get('http://localhost:8080/candidates/Secretary');
+    return this.http.get('http://localhost:8080/candidates/SE');
   }
 
   getTresurer(){
-    return this.http.get('http://localhost:8080/candidates/Treasurer');
+    return this.http.get('http://localhost:8080/candidates/TR');
   }
 
   getEditor(){
-    return this.http.get('http://localhost:8080/candidates/Editor');
+    return this.http.get('http://localhost:8080/candidates/ED');
   }
 
   getVicePresident(){
-    return this.http.get('http://localhost:8080/candidates/VicePresident');
+    return this.http.get('http://localhost:8080/candidates/VP');
   }
 
   getCommittee(){
-    return this.http.get('http://localhost:8080/candidates/Committee');
+    return this.http.get('http://localhost:8080/candidates/CM');
   }
+
+  // getCommitteeIS(){
+  //   return this.http.get('http://localhost:8080/candidates/CM/is');
+  // }
 
 
   

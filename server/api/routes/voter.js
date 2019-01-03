@@ -106,7 +106,7 @@ router.post('/signup',(req,res,next)=>{
         Token: <b>${user.randomstring}</b>
         <br/>
         On the following page:
-        <a href="http://localhost:4200/verify">http://localhost:4200/verify</a>
+        <a href="http://localhost:8100/verify">http://localhost:8100/verify</a>
         <br/><br/>
         Have a pleasant day.` ;
         console.log(req.body.registrationnumber);
@@ -119,12 +119,13 @@ router.post('/signup',(req,res,next)=>{
                     console.log("**");
                     user.save((err, doc) => {
                         if (!err){        //if not yet signup                    
-                            
+                 
                             res.status(200).json({
                                 message: "Successfully Inserted",
                                 Signup : user
                             })
                             mailer.sendEmail('evotingucsc@gmail.com', user.email, 'Please verify your email!', html)
+
                         }else{
                             if (err.code === 11000){ //if already signup
                                 res.status(422).json({  //422 (Unprocessable Entity) 
@@ -134,7 +135,7 @@ router.post('/signup',(req,res,next)=>{
                                 return res.status(500).json({
                                     error: err
                                 });
-                            }
+                            } 
                         }
                     });
                 }else{ //already signup
@@ -154,8 +155,9 @@ router.post('/signup',(req,res,next)=>{
                 //     res.status(404).send('Not allowed user');
                 // }
             }else{ //Server Issue
-                throw er;
+                throw errors;
             }
+            
     })
 });
 router.post("/login",(req,res,next)=>{
@@ -222,12 +224,15 @@ router.delete("/:voterId",(req,res,next)=>{
 
 router.put("/verify",(req,res,next)=>{  //
     User.findOneAndUpdate({
+
         randomstring : req.body.token
+
     },
     {$set:{isvalid:true},
     $unset :{randomstring:1}
     },
     function(err,result){
+
         if(err){
             res.status(500).json({
                 error : err
@@ -244,5 +249,7 @@ router.put("/verify",(req,res,next)=>{  //
 
 })
 
+
+})
 
 module.exports = router;
