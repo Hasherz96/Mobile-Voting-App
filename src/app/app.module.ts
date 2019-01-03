@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
-import { VotePage } from '../pages/vote/vote';
+import { VotePage } from '../pages/vote/vote'; 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +19,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { GlobalVarProvider } from '../providers/global-var/global-var';
 import { PasswordChangePage } from '../pages/password-change/password-change';
 import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
-import { VerifyPage } from '../pages/verify/verify'
+
 
 
 import { CountdownModule } from 'ngx-countdown';

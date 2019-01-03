@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {VerifyPage} from '../verify/verify';
+
 import { LoginPage } from '../login/login';
 
 import { CountdownPage } from '../countdown/countdown';
@@ -52,7 +52,7 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  toHome(){ //to link the page to home
+  toVerify(){ //to link the page to home
     let data = {
       userName: this.userName,
       registrationnumber: this.registrationnumber,
@@ -151,9 +151,6 @@ export class SignupPage {
   //   this.navCtrl.push(CountdownPage);
   // }
 
-  toVerify(){
-    this.navCtrl.push(VerifyPage) 
-  }
 
   toBack(){ //to exit app
     //creating an alert before exiting app

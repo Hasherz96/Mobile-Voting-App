@@ -250,6 +250,6 @@ router.put("/verify",(req,res,next)=>{  //
 })
 
 
-})
+//})
 
 module.exports = router;
