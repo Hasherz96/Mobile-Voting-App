@@ -22,6 +22,9 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
 import { VerifyPage } from '../pages/verify/verify'
 
 
+import { CountdownModule } from 'ngx-countdown';
+import { CountdownPage } from '../pages/countdown/countdown';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,6 +36,7 @@ import { VerifyPage } from '../pages/verify/verify'
     VotePage,
     RulesPage,
     SettingsPage,
+    CountdownPage,
     PasswordChangePage,
     OtpgeneratePage,
     VerifyPage
@@ -41,6 +45,7 @@ import { VerifyPage } from '../pages/verify/verify'
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    CountdownModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,9 +58,11 @@ import { VerifyPage } from '../pages/verify/verify'
     VotePage,
     RulesPage,
     SettingsPage,
+    CountdownPage,
     PasswordChangePage,
     OtpgeneratePage,
     VerifyPage
+
 
   ],
   providers: [

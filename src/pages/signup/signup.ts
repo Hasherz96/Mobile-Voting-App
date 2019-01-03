@@ -3,8 +3,13 @@ import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {VerifyPage} from '../verify/verify';
 import { LoginPage } from '../login/login';
+
+import { CountdownPage } from '../countdown/countdown';
+
 import { Platform } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
+
+import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms'
+
 
 @IonicPage()
 @Component({
@@ -12,21 +17,23 @@ import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/fo
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  formgroup: FormGroup;
-  userName:AbstractControl;
-  registrationnumber:AbstractControl;
+
+  formgroup:FormGroup;
+  userName: AbstractControl;
+  registrationnumber: AbstractControl;
   email: AbstractControl;
-  phonenumber:AbstractControl;
+  phonenumber: AbstractControl;
   password: AbstractControl;
-  cpassword:AbstractControl;
-  
+  cpassword: AbstractControl
+
   constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient,public formbuilder:FormBuilder) {
     this.formgroup = formbuilder.group({
       userName: ['',Validators.required],
-      registrationnumber:['',Validators.required],
-      email:['',Validators.required],
-      phonenumber:['',Validators.required],
-      password: ['',Validators.required],
+      registrationnumber: ['',Validators.required],
+      email: ['',Validators.required],
+      phonenumber: ['',[Validators.required, Validators.maxLength(10),Validators.minLength(10)]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
+
       cpassword: ['',Validators.required],
     });
     this.userName = this.formgroup.contains['userName'];
@@ -135,6 +142,10 @@ export class SignupPage {
 
   toLogin(){
     this.navCtrl.push(LoginPage);
+  }
+
+  toCountdown(){
+    this.navCtrl.push(CountdownPage);
   }
 
   toBack(){ //to exit app

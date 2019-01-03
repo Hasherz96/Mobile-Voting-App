@@ -14,28 +14,25 @@
 
 <ion-content padding><br><br><br>
   <ion-card>
-    <form [formGroup]="formgroup"><br><br><br>
-     
+
+  <form [formGroup]="formgroup">
     <ion-item>
         <ion-label color="dark" floating>Email</ion-label>
-        <ion-input [(ngModel)]="email" formControlName="email" type="text" ></ion-input>
+        <ion-input formControlName="email" [(ngModel)]="email" type="text"></ion-input>
       </ion-item>
-      <div class="help-block form-error text-danger small" 
-      *ngIf="formgroup.controls['email'].errors?.required &&
-      formgroup.controls['email'].touched">
-        <p style="margin-left: 30px; font-size: 12px; text-decoration: underline; color: #e60d0d;">*Email Is Required</p>
-    </div>
-
+      <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.email.errors?.required &&
+        formgroup.controls.email.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Username is Required </p></span>
 
       <ion-item>
         <ion-label color="dark" floating>Password</ion-label>
-        <ion-input [(ngModel)]="password" formControlName="password" type="password"></ion-input>
+        <ion-input formControlName="password" [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
-      <div class="help-block form-error text-danger small" 
-      *ngIf="formgroup.controls['password'].errors?.required &&
-      formgroup.controls['password'].touched">
-        <p style="margin-left: 30px; font-size: 12px; text-decoration: underline; color: #e60d0d;">*Password Is Required</p>
-    </div>
+      <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.password.errors?.required &&
+        formgroup.controls.password.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Password is Required </p></span>
 
       <br><br>
       <div text-center>
@@ -45,7 +42,7 @@
           <button clear ion-button style="left: 10px; font-size: 16px; background-color: #080808; color: #fdfbfb;" (click)="toLog()">Login</button>
           <button clear ion-button style="left: 10px; font-size: 16px; background-color: #bbb6b6; color: #0f0f0f;" (click)="toBack()">Cancel</button>
       </div>
-    
+
     </form>
     </ion-card><br>
 

@@ -28,6 +28,13 @@ export class HelloIonicPage {
       }
   }
 
+  ngOnInit(){
+    let now = new Date().getTime()/1000; 
+  //  if (now > )
+   
+  }
+  
+
   createAlert(){
     let alert = this.alertctrl.create({
       title:'Oops!',

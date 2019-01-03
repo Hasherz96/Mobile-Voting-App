@@ -32,11 +32,21 @@ const candidatesRoutes = require('./api/routes/candidates');
 const rulesRoutes = require('./api/routes/rules');
 const voteRoutes = require('./api/routes/vote');
 const voterRoutes = require('./api/routes/voter');
+
+const electionRoutes = require('./api/routes/election');
+
+/*Middleware*/
+
+app.use(morgan('dev')); 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 const emailRoutes = require('./api/routes/email');
 
 
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use('/uploads',express.static('uploads'));
+
 
 
 /*Handling CORS errors*/
@@ -60,8 +70,11 @@ app.use((req, res, next)=>{
 /* Routes which should handle requests */
 app.use('/candidates', candidatesRoutes); /* every url with candidates */
 app.use('/rules', rulesRoutes); /* every url with rules */
-app.use('/vote', voteRoutes); /* every url with rules */
+app.use('/vote', voteRoutes); /* every url with vote */
 app.use('/voter',voterRoutes);
+
+app.use('/election',electionRoutes);
+
 app.use('/email',emailRoutes)
 
 
