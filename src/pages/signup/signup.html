@@ -16,31 +16,88 @@
 
 
 <ion-content padding  class="masters"><br><br><br>
-  <!-- <ion-card> -->
+  <ion-card>
+  <form [formGroup]="formgroup">
     <ion-item>
       <ion-label color="dark" floating>Username</ion-label>
-      <ion-input [(ngModel)]="userName" type="text"></ion-input>
+      <ion-input formControlName="userName" [(ngModel)]="userName" type="text"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('userName').hasError('required') && formgroup.get('userName').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Username is required</p>
+      </div>
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.userName.errors?.required &&
+        formgroup.controls.userName.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Username is required</p></span> -->
+
     <ion-item>
       <ion-label color="dark" floating>Registration Number</ion-label>
-      <ion-input [(ngModel)]="registrationnumber" type="text"></ion-input>
+      <ion-input formControlName="registrationnumber" [(ngModel)]="registrationnumber" type="text"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('registrationnumber').hasError('required') && formgroup.get('registrationnumber').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Registration Number is required</p>
+      </div>
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.registrationnumber.errors?.required &&
+        formgroup.controls.registrationnumber.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Registration Number is required</p></span> -->
+
     <ion-item>
       <ion-label color="dark" floating>Email</ion-label>
-      <ion-input [(ngModel)]="email" type="text"></ion-input>
+      <ion-input formControlName="email" [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('email').hasError('required') && formgroup.get('email').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Email is required</p>
+      </div>
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.email.errors?.required &&
+        formgroup.controls.email.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Email is required</p></span> -->
+
     <ion-item>
       <ion-label color="dark" floating>Phone Number</ion-label>
-      <ion-input [(ngModel)]="phonenumber" type="text"></ion-input>
+      <ion-input formControlName="phonenumber" [(ngModel)]="phonenumber" type="text"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('phonenumber').hasError('required') && formgroup.get('phonenumber').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Phone Number is required</p>
+      </div>
+    <div class="error" *ngIf="formgroup.get('phonenumber').hasError('maxlength') && formgroup.get('phonenumber').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">Incorrect phone number</p>
+      </div>
+    <div class="error" *ngIf="formgroup.get('phonenumber').hasError('minlength') && formgroup.get('phonenumber').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">Incorrect phone number</p>
+      </div>    
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.phonenumber.errors?.required &&
+        formgroup.controls.phonenumber.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Phone Number is required</p></span> -->
+
     <ion-item>
       <ion-label color="dark" floating>Password</ion-label>
-      <ion-input [(ngModel)]="password" type="password"></ion-input>
+      <ion-input formControlName="password" [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('password').hasError('required') && formgroup.get('password').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Password is required</p>
+      </div>
+    <div class="error" *ngIf="formgroup.get('password').hasError('minlength') && formgroup.get('password').touched">
+        At least 8 characters required
+      </div>
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.password.errors?.required &&
+        formgroup.controls.password.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Password is required</p></span> -->
+
     <ion-item>
       <ion-label color="dark" floating >Confirm Password</ion-label>
-      <ion-input [(ngModel)]="cpassword" type="password"></ion-input>
+      <ion-input formControlName="cpassword" [(ngModel)]="cpassword" type="password"></ion-input>
     </ion-item>
+    <div class="error" *ngIf="formgroup.get('cpassword').hasError('required') && formgroup.get('cpassword').touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Confirm password is required</p>
+      </div>
+    <!-- <span class="help-block form-error text-danger small" 
+        *ngIf="formgroup.controls.cpassword.errors?.required &&
+        formgroup.controls.cpassword.touched">
+        <p style="margin-left: 20px; font-size: 12px; color: #f30909;">* Confirm password is required</p></span> -->
 
     <br>
     <br>
@@ -49,11 +106,11 @@
       <button ion-button color="dark" (click)="toHome()">Sign Up</button>
       <button ion-button color="light" (click)="toBack()">Cancel</button>
     </div>
-   <!-- </ion-card>  -->
+   </form>
+   </ion-card> 
     <br>
 
-    <br> 
-    </ion-card>
+    <br>  
     <div text-center>
      <p style="color:white"> Already have an account ?</p>
       <button ion-button color="light" (click)="toLogin()" >login</button>

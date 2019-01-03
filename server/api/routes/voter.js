@@ -118,7 +118,7 @@ router.post('/signup',(req,res,next)=>{
                 if(result.email==user.email){ //check he is already signup
                     user.save((err, doc) => {
                         if (!err){        //if not yet signup                    
-                            res.send(doc);
+                            
                             res.status(200).json({
                                 message: "Successfully Inserted",
                                 Signup : user

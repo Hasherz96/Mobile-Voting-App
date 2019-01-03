@@ -7,7 +7,7 @@ import { LoginPage } from '../login/login';
 import { CountdownPage } from '../countdown/countdown';
 
 import { Platform } from 'ionic-angular';
-
+import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms'
 
 @IonicPage()
 @Component({
@@ -15,15 +15,29 @@ import { Platform } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  userName: String;
-  registrationnumber: String;
-  email: string;
-  phonenumber: String;
-  password: string;
-  cpassword: string
+  formgroup:FormGroup;
+  userName: AbstractControl;
+  registrationnumber: AbstractControl;
+  email: AbstractControl;
+  phonenumber: AbstractControl;
+  password: AbstractControl;
+  cpassword: AbstractControl
 
-  constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient) {
-  
+  constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient,public formbuilder:FormBuilder) {
+    this.formgroup = formbuilder.group({
+      userName: ['',Validators.required],
+      registrationnumber: ['',Validators.required],
+      email: ['',Validators.required],
+      phonenumber: ['',[Validators.required, Validators.maxLength(10),Validators.minLength(10)]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
+      cpassword: ['',Validators.required],
+    });
+    this.userName = this.formgroup.contains['userName'];
+    this.registrationnumber = this.formgroup.contains['registrationnumber'];
+    this.email = this.formgroup.contains['email'];
+    this.phonenumber = this.formgroup.contains['phonenumber'];
+    this.password = this.formgroup.contains['password'];
+    this.cpassword = this.formgroup.contains['cpassword'];
   }
   exitApp(){
     this.platform.exitApp();

@@ -35,10 +35,7 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
-
-    CountdownPage
-    
-
+    CountdownPage,
     PasswordChangePage,
     OtpgeneratePage
 
@@ -60,10 +57,7 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
-
-    CountdownPage
-
-
+    CountdownPage,
     PasswordChangePage,
     OtpgeneratePage
 
