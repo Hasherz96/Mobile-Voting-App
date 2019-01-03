@@ -6,8 +6,6 @@ import { Candidate } from '../vote/vote.model';
 
 
 
-
-@IonicPage()
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'

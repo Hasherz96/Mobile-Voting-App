@@ -3,9 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import {HelloIonicPage} from '../hello-ionic/hello-ionic';
 import {SignupPage} from '../signup/signup';
-import {PasswordChangePage} from '../password-change/password-change';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
-
+import { PasswordChangePage } from '../password-change/password-change'
 /**
  * Generated class for the LoginPage page.
  *
@@ -69,12 +68,12 @@ export class LoginPage {
             if(error.status==401){ //invalid password entered
               let alert = this.alertctrl.create({
                 title:'Incorrect password',
-                message:'You have to change your password!',
+                message:'Please Try Again!',
                 buttons: [
                   {
                     text: 'Ok',
                     handler: () => {
-                      this.navCtrl.push(PasswordChangePage);
+                      
                     }
                   }
                 ]
@@ -85,26 +84,20 @@ export class LoginPage {
             }else if(error.status==404){//invalid email
 
               let alert = this.alertctrl.create({
-                title:'Invalid email',
-                message:'Please try correct email or signup!',
+                title:'Invalid Login',
+                message:'We cannot recognize your email or password.\nPlease Try Again!',
                 buttons: [
                   {
-                    text: 'Try',
+                    text: 'Ok',
                     role:'Stay',
                     handler: () => {
                       console.log('Stay here');
-                    }
-                  },  
-                  {
-                    text: 'Signup',
-                    handler: data => {
-                      this.navCtrl.push(SignupPage);
-                      console.log('go to signup');
                     }
                   }
                 ]
               });
               alert.present();
+            
             }else{
               let alert = this.alertctrl.create({
                 title:'Invalid login',

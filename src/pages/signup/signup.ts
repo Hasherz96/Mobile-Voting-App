@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {HelloIonicPage} from '../hello-ionic/hello-ionic';
+import {VerifyPage} from '../verify/verify';
 import { LoginPage } from '../login/login';
 import { Platform } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
@@ -62,7 +62,7 @@ export class SignupPage {
                   text: 'Next',
                   role:'Stay',
                   handler: data => {
-                    this.navCtrl.push(HelloIonicPage);
+                    this.navCtrl.push(VerifyPage);
                     console.log('Homepage');
                   }
                 }
@@ -109,7 +109,7 @@ export class SignupPage {
               let alert = this.alertctrl.create({
                 // title:'Try Again!',
                 title:'Invalid SignUp',
-                message:'PLease Try Again',
+                message:'Please Try Again',
                 buttons: [
                   {
                     text: 'OK',
