@@ -116,6 +116,7 @@ router.post('/signup',(req,res,next)=>{
             console.log(user.registrationnumber);
             if(result){ //allowed user
                 if(result.email==user.email){ //check he is already signup
+                    console.log("**");
                     user.save((err, doc) => {
                         if (!err){        //if not yet signup                    
                             
@@ -143,7 +144,15 @@ router.post('/signup',(req,res,next)=>{
                     // res.status(422).send('Enter Correct Email Address');
                 }
             }else if(!result) {//not a allowed user
-                res.status(404).send('Not allowed user');
+                 res.status(404).send('Not allowed user');
+                // if(result.email!=user.email){
+                //     return res.status(500).json({
+                //         error: err
+                //     });
+                // }else{// if emils equal
+                //     console.log("**");
+                //     res.status(404).send('Not allowed user');
+                // }
             }else{ //Server Issue
                 throw er;
             }
@@ -209,8 +218,31 @@ router.delete("/:voterId",(req,res,next)=>{
             error : err
         });
     })
-})
+});
 
+router.put("/verify",(req,res,next)=>{  //
+    User.findOneAndUpdate({
+        randomstring : req.body.token
+    },
+    {$set:{isvalid:true},
+    $unset :{randomstring:1}
+    },
+    function(err,result){
+        if(err){
+            res.status(500).json({
+                error : err
+            })
+        }else if(!result){
+            res.status(422).send("Invalid Key");
+        }
+        else{
+            res.status(200).json({
+                message: "Successfully verified"
+            });
+        }
+    });
+
+})
 
 
 module.exports = router;

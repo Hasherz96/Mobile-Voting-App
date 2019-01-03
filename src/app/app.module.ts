@@ -19,6 +19,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { GlobalVarProvider } from '../providers/global-var/global-var';
 import { PasswordChangePage } from '../pages/password-change/password-change';
 import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
+import { VerifyPage } from '../pages/verify/verify'
 
 
 import { CountdownModule } from 'ngx-countdown';
@@ -37,8 +38,8 @@ import { CountdownPage } from '../pages/countdown/countdown';
     SettingsPage,
     CountdownPage,
     PasswordChangePage,
-    OtpgeneratePage
-
+    OtpgeneratePage,
+    VerifyPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ import { CountdownPage } from '../pages/countdown/countdown';
     SettingsPage,
     CountdownPage,
     PasswordChangePage,
-    OtpgeneratePage
+    OtpgeneratePage,
+    VerifyPage
 
 
   ],

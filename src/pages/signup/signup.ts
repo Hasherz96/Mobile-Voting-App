@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {HelloIonicPage} from '../hello-ionic/hello-ionic';
+import {VerifyPage} from '../verify/verify';
 import { LoginPage } from '../login/login';
 
 import { CountdownPage } from '../countdown/countdown';
 
 import { Platform } from 'ionic-angular';
+
 import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms'
+
 
 @IonicPage()
 @Component({
@@ -15,6 +17,7 @@ import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+
   formgroup:FormGroup;
   userName: AbstractControl;
   registrationnumber: AbstractControl;
@@ -30,6 +33,7 @@ export class SignupPage {
       email: ['',Validators.required],
       phonenumber: ['',[Validators.required, Validators.maxLength(10),Validators.minLength(10)]],
       password: ['',[Validators.required, Validators.minLength(8)]],
+
       cpassword: ['',Validators.required],
     });
     this.userName = this.formgroup.contains['userName'];
@@ -39,6 +43,7 @@ export class SignupPage {
     this.password = this.formgroup.contains['password'];
     this.cpassword = this.formgroup.contains['cpassword'];
   }
+
   exitApp(){
     this.platform.exitApp();
   }
@@ -64,7 +69,7 @@ export class SignupPage {
                   text: 'Next',
                   role:'Stay',
                   handler: data => {
-                    this.navCtrl.push(HelloIonicPage);
+                    this.navCtrl.push(VerifyPage);
                     console.log('Homepage');
                   }
                 }
@@ -78,8 +83,8 @@ export class SignupPage {
 
             if(error.status==404){ //invalid email entered
               let alert = this.alertctrl.create({
-                title:'Attention!',
-                message:'You are not allowed user.',
+                title:'Unauthorized Access',
+                message:'We do not recognize this user. Please try again',
                 buttons: [
                   {
                     text: 'Ok',
@@ -94,21 +99,14 @@ export class SignupPage {
             
             }else if(error.status==422){
               let alert = this.alertctrl.create({
-                title:'Try Again!',
-                message:'You are already signup',
+                title:'Sorry!',
+                message:'The User already exists',
                 buttons: [
                   {
-                    text: 'Signup',
+                    text: 'OK',
                     role:'Stay',
                     handler: () => {
                       console.log('Stay here');
-                    }
-                  },  
-                  {
-                    text: 'Login',
-                    handler: data => {
-                      this.navCtrl.push(LoginPage);
-                      console.log('go to signup');
                     }
                   }
                 ]
@@ -117,10 +115,11 @@ export class SignupPage {
             }else{
               let alert = this.alertctrl.create({
                 // title:'Try Again!',
-                message:'Invalid Signup!',
+                title:'Invalid SignUp',
+                message:'Please Try Again',
                 buttons: [
                   {
-                    text: 'Signup',
+                    text: 'OK',
                     role:'Stay',
                     handler: () => {
                       console.log('staying');

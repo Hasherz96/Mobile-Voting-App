@@ -3,9 +3,9 @@ page-signup {
         background-color: #3F51B5 !important;
     }
 }
-.card-md{
-    height: 5000px;
-}
+// .card-md{
+//     height: 5000px;
+// }
 .card-md .item-inner {
      border-bottom: 1px solid #dedede !important; 
 }
@@ -15,5 +15,7 @@ page-signup {
     padding-right: 16px;}
 
 .card-md{
-    height:610px;
+
+    height:80% !important;
+
 }

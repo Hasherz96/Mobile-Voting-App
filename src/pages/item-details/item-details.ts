@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { NavController, NavParams } from 'ionic-angular';
 import { Candidate } from '../vote/vote.model';
 
+
+
+
+
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
