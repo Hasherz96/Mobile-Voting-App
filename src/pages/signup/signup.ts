@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { CountdownPage } from '../countdown/countdown';
 
 import { Platform } from 'ionic-angular';
+import { VerifyPage } from '../verify/verify';
 
 
 @IonicPage()
@@ -50,7 +51,7 @@ export class SignupPage {
                   text: 'Next',
                   role:'Stay',
                   handler: data => {
-                    this.navCtrl.push(HelloIonicPage);
+                    this.navCtrl.push(VerifyPage); //changed here
                     console.log('Homepage');
                   }
                 }
@@ -126,13 +127,17 @@ export class SignupPage {
           }
         });  
   }
-
+ 
   toLogin(){
     this.navCtrl.push(LoginPage);
   }
 
-  toCountdown(){
-    this.navCtrl.push(CountdownPage);
+  // toCountdown(){
+  //   this.navCtrl.push(CountdownPage);
+  // }
+
+  toVerify(){
+    this.navCtrl.push(VerifyPage) 
   }
 
   toBack(){ //to exit app

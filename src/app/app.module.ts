@@ -23,6 +23,7 @@ import { OtpgeneratePage } from '../pages/otpgenerate/otpgenerate';
 
 import { CountdownModule } from 'ngx-countdown';
 import { CountdownPage } from '../pages/countdown/countdown';
+import { VerifyPage } from '../pages/verify/verify';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,10 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
-
-    CountdownPage
-    
-
+    CountdownPage,
     PasswordChangePage,
-    OtpgeneratePage
-
+    OtpgeneratePage,
+    VerifyPage 
   ],
   imports: [
     BrowserModule,
@@ -60,14 +58,10 @@ import { CountdownPage } from '../pages/countdown/countdown';
     VotePage,
     RulesPage,
     SettingsPage,
-
-    CountdownPage
-
-
+    CountdownPage,
     PasswordChangePage,
-    OtpgeneratePage
-
-
+    OtpgeneratePage,
+    VerifyPage
   ],
   providers: [
     StatusBar,

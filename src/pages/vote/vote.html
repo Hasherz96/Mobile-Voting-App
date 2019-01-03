@@ -119,20 +119,51 @@
         <ion-card-header>
           Committee Members
         </ion-card-header>
-        <ion-card-content>
+        <ion-card-content>  
             
-                <ion-list radio-group [(ngModel)]="cm1">
+                <!-- <ion-list radio-group [(ngModel)]="cm"> -->
                     
-                        <ion-item text-wrap *ngFor ="let a of Committee"> 
-                                <!--   <div *ngIf= "(a.post=='President')"> -->
+                        <!-- <ion-item text-wrap *ngFor ="let a of Committee"> 
+                                 <div *ngIf= "(a.post=='President')"> 
                                         <ion-label>{{a.candidatename}}</ion-label>
                                         <ion-radio value={{a.candidatename}}>{{a.candidatename}}</ion-radio> 
-                                 <!--   </div> -->
+                                  </div> 
+                        </ion-item> -->
+
+<!-- 
+                        <ion-item text-wrap *ngFor ="let item of Committee">
+                                <ion-label>{{a.candidatename}}</ion-label>
+                                 <ion-radio value={{a.candidatename}}>{{a.candidatename}}</ion-radio>  -->
+                                
+                                <!-- <ion-checkbox  [(ngModel)]="a.candidatename" (ionChange)="updateCount()" if></ion-checkbox>
+                                <ion-checkbox  [(ngModel)]="item.checked" (ngModelChange)="change()" [disabled]="!candidate.checked && num>3">Checked </ion-checkbox>
+
+                        </ion-item> 
+                             -->
+                <!-- </ion-list> -->
+                            
+        </ion-card-content>
+    </ion-card>
+
+
+    <!-- <ion-card>
+        <ion-card-header>
+          Committee Members(IS)
+        </ion-card-header>
+        <ion-card-content>
+            
+                <ion-list radio-group [(ngModel)]="cm2">
+                    
+                        <ion-item text-wrap *ngFor ="let a of Committee2"> 
+                                 <div *ngIf= "(a.post=='President')"> 
+                                        <ion-label>{{a.candidatename}}</ion-label>
+                                        <ion-radio value={{a.candidatename}}>{{a.candidatename}}</ion-radio> 
+                                  </div> 
                         </ion-item>
                 </ion-list>
                            
         </ion-card-content>
-    </ion-card>
+    </ion-card> -->
 
    <!-- <ion-card>
         <ion-card-header>
