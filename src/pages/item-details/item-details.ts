@@ -7,16 +7,17 @@ import { Candidate } from '../vote/vote.model';
 
 
 
-//@IonicPage()
+
+
+
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
   selectedItem: any;
-
-
-  /*Declaring object to display in the Ui*/
+  
+    /*Declaring object to display in the Ui*/
   data:Candidate[]=[];
  
 

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { HttpErrorResponse,HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {HelloIonicPage} from '../hello-ionic/hello-ionic';
+import {VerifyPage} from '../verify/verify';
 import { LoginPage } from '../login/login';
 
 import { CountdownPage } from '../countdown/countdown';
 
 import { Platform } from 'ionic-angular';
 import { VerifyPage } from '../verify/verify';
+
+import { FormBuilder,FormGroup,Validators,AbstractControl } from '@angular/forms'
 
 
 @IonicPage()
@@ -16,16 +18,33 @@ import { VerifyPage } from '../verify/verify';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  userName: String;
-  registrationnumber: String;
-  email: string;
-  phonenumber: String;
-  password: string;
-  cpassword: string
 
-  constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient) {
-  
+  formgroup:FormGroup;
+  userName: AbstractControl;
+  registrationnumber: AbstractControl;
+  email: AbstractControl;
+  phonenumber: AbstractControl;
+  password: AbstractControl;
+  cpassword: AbstractControl
+
+  constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,private alertctrl:AlertController,private http: HttpClient,public formbuilder:FormBuilder) {
+    this.formgroup = formbuilder.group({
+      userName: ['',Validators.required],
+      registrationnumber: ['',Validators.required],
+      email: ['',Validators.required],
+      phonenumber: ['',[Validators.required, Validators.maxLength(10),Validators.minLength(10)]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
+
+      cpassword: ['',Validators.required],
+    });
+    this.userName = this.formgroup.contains['userName'];
+    this.registrationnumber = this.formgroup.contains['registrationnumber'];
+    this.email = this.formgroup.contains['email'];
+    this.phonenumber = this.formgroup.contains['phonenumber'];
+    this.password = this.formgroup.contains['password'];
+    this.cpassword = this.formgroup.contains['cpassword'];
   }
+
   exitApp(){
     this.platform.exitApp();
   }
@@ -51,7 +70,9 @@ export class SignupPage {
                   text: 'Next',
                   role:'Stay',
                   handler: data => {
-                    this.navCtrl.push(VerifyPage); //changed here
+
+                    this.navCtrl.push(VerifyPage);
+
                     console.log('Homepage');
                   }
                 }
@@ -65,8 +86,8 @@ export class SignupPage {
 
             if(error.status==404){ //invalid email entered
               let alert = this.alertctrl.create({
-                title:'Attention!',
-                message:'You are not allowed user.',
+                title:'Unauthorized Access',
+                message:'We do not recognize this user. Please try again',
                 buttons: [
                   {
                     text: 'Ok',
@@ -81,21 +102,14 @@ export class SignupPage {
             
             }else if(error.status==422){
               let alert = this.alertctrl.create({
-                title:'Try Again!',
-                message:'You are already signup',
+                title:'Sorry!',
+                message:'The User already exists',
                 buttons: [
                   {
-                    text: 'Signup',
+                    text: 'OK',
                     role:'Stay',
                     handler: () => {
                       console.log('Stay here');
-                    }
-                  },  
-                  {
-                    text: 'Login',
-                    handler: data => {
-                      this.navCtrl.push(LoginPage);
-                      console.log('go to signup');
                     }
                   }
                 ]
@@ -104,10 +118,11 @@ export class SignupPage {
             }else{
               let alert = this.alertctrl.create({
                 // title:'Try Again!',
-                message:'Invalid Signup!',
+                title:'Invalid SignUp',
+                message:'Please Try Again',
                 buttons: [
                   {
-                    text: 'Signup',
+                    text: 'OK',
                     role:'Stay',
                     handler: () => {
                       console.log('staying');
